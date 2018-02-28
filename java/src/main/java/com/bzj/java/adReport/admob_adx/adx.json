@@ -1,0 +1,16 @@
+{
+  "web": {
+    "client_id": "334825491895-hf19mupmvv345nse94thse1oa81u3k9t.apps.googleusercontent.com",
+    "project_id": "test",
+    "auth_uri": "https://accounts.google.com/o/oauth2/auth",
+    "token_uri": "https://accounts.google.com/o/oauth2/token",
+    "auth_provider_x509_cert_url": "https://www.googleapis.com/oauth2/v1/certs",
+    "client_secret": "PiDRxRVlvUenAV1ZCaKG",
+    "redirect_uris": [
+      "http://www.bzj.com/common/oauth2/google/callback"
+    ],
+    "javascript_origins": [
+      "http://www.bzj.com"
+    ]
+  }
+}
