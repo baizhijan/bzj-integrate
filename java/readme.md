@@ -15,9 +15,9 @@
 ##### 1.1 adReport
 > 广告平台收益数据拉取代码:
 
-包|平台|说明
--|:-:|-:
-admob_adx|admob&adx|Google 平台数据拉取方式
+|包|平台|说明|
+|-|:-:|-:|
+|admob_adx|admob&adx|Google 平台数据拉取方式|
 
 
 ##### 2. shell
