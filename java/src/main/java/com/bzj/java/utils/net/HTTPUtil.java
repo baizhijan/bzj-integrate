@@ -95,11 +95,17 @@ public class HTTPUtil {
         }
         HttpGet get = new HttpGet(url);
         get.setConfig(requestConfig);
-        CloseableHttpResponse response = client.execute(get);
-        if (response.getStatusLine().getStatusCode() == 200) {
-            HttpEntity entity = response.getEntity();
-            return EntityUtils.toString(entity, "utf-8");
+        CloseableHttpResponse response = null;
+        try {
+            response = client.execute(get);
+            if (response.getStatusLine().getStatusCode() == 200) {
+                HttpEntity entity = response.getEntity();
+                return EntityUtils.toString(entity, "utf-8");
+            }
+        } finally {
+            client.close();
         }
+
         return null;
     }
 
@@ -118,17 +124,21 @@ public class HTTPUtil {
         }
         HttpPost post = new HttpPost(url);
         post.setConfig(requestConfig);
-        if (parameters != null) {
-            List<NameValuePair> naps = new ArrayList<NameValuePair>();
-            for (Map.Entry<String, String> entry : parameters.entrySet()) {
-                naps.add(new BasicNameValuePair(entry.getKey(), entry.getValue()));
+        try {
+            if (parameters != null) {
+                List<NameValuePair> naps = new ArrayList<NameValuePair>();
+                for (Map.Entry<String, String> entry : parameters.entrySet()) {
+                    naps.add(new BasicNameValuePair(entry.getKey(), entry.getValue()));
+                }
+                post.setEntity(new UrlEncodedFormEntity(naps));
             }
-            post.setEntity(new UrlEncodedFormEntity(naps));
-        }
-        CloseableHttpResponse response = client.execute(post);
-        if (response.getStatusLine().getStatusCode() == 200) {
-            HttpEntity entity = response.getEntity();
-            return EntityUtils.toString(entity, "utf-8");
+            CloseableHttpResponse response = client.execute(post);
+            if (response.getStatusLine().getStatusCode() == 200) {
+                HttpEntity entity = response.getEntity();
+                return EntityUtils.toString(entity, "utf-8");
+            }
+        } finally {
+            client.close();
         }
         return null;
     }
