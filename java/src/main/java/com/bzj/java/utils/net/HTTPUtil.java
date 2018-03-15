@@ -95,9 +95,8 @@ public class HTTPUtil {
         }
         HttpGet get = new HttpGet(url);
         get.setConfig(requestConfig);
-        CloseableHttpResponse response = null;
         try {
-            response = client.execute(get);
+            CloseableHttpResponse response = client.execute(get);
             if (response.getStatusLine().getStatusCode() == 200) {
                 HttpEntity entity = response.getEntity();
                 return EntityUtils.toString(entity, "utf-8");
