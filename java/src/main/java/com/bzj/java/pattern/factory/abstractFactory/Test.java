@@ -1,6 +1,8 @@
 package com.bzj.java.pattern.factory.abstractFactory;
 
 
+import com.bzj.java.pattern.XMLUtil;
+
 /**
  * @author aaronbai
  * @create 2018-03-20 20:34
@@ -13,7 +15,7 @@ public class Test {
         TextField tf;
         ComboBox cb;
 
-        factory = (SkinFactory)XMLUtil.getBean();
+        factory = (SkinFactory) XMLUtil.getBean();
         bt = factory.createButton();
         tf = factory.createTextField();
         cb = factory.createComboBox();

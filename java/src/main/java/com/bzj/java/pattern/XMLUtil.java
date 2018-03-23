@@ -1,6 +1,5 @@
-package com.bzj.java.pattern.factory.abstractFactory;
+package com.bzj.java.pattern;
 
-import com.bzj.java.adReport.admob_adx.Admob;
 import org.w3c.dom.Document;
 import org.w3c.dom.Node;
 import org.w3c.dom.NodeList;

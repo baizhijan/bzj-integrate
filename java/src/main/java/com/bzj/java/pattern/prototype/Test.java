@@ -8,7 +8,7 @@ import java.io.IOException;
  * @author aaronbai
  * @create 2018-03-21 16:34
  **/
-public class Client {
+public class Test {
 
     public static void main(String[] args) throws CloneNotSupportedException, IOException, ClassNotFoundException {
         //创建对象
